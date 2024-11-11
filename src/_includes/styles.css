@@ -214,7 +214,7 @@ body {
 
         &>p,
         &>section {
-          grid-column-start: 2;
+          grid-column-start: 1;
 
           &>header {
             &>h3 {
