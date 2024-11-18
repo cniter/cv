@@ -1,16 +1,17 @@
 <section>
-  <h2>Education</h2>
+  <h2>教育背景</h2>
   {%- for education in resume.education %}
     <section>
       <header>
         <h3>
-          {{ education.studyType }} in {{ education.area }}
+          {{ education.institution }}
+        </span>
         </h3>
         <span>
-          {{ education.institution }}
+          {{ education.studyType }} {{ education.area }}
           {%- if education.focus -%}
           , <span class="focus">
-            Focus: {{ education.focus }}
+            研究方向: {{ education.focus }}
           </span>
           {%- endif %}
         </span>

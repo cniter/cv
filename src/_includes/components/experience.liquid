@@ -1,10 +1,13 @@
 <section>
-  <h2>Experience</h2>
+  <h2>项目经历</h2>
   {%- for work in resume.work %}
     <section>
+      {% if forloop.index != 1 -%}
+        <hr class="solid" />
+      {%- endif %}
       <header>
-        <h3>{{ work.position }}</h3>
-        <span>{{ work.name }}</span>
+        <h3>{{ work.name }}</h3>
+        <span>{{ work.position }}</span>
         <span class="date">
           {% if work.period -%}
             {{ work.period }}
@@ -20,6 +23,20 @@
           </li>
         {%- endfor %}
       </ul>
+      <hr />
+      {%- for project in work.projects %}
+        <header>
+          <h3 class="normal">{{ project.name }}</h3>
+          <span class="italic">{{ project.tech }}</span>
+        </header>
+        <ul>
+          {%- for highlight in project.highlights %}
+            <li>
+              {{ highlight }}
+            </li>
+          {%- endfor %}
+        </ul>
+      {%- endfor %}
     </section>
   {%- endfor %}
 </section>

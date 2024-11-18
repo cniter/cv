@@ -1,25 +1,20 @@
 {
     "basics": {
-        "name": "Michael Engen",
-        "label": "Full-Stack Software Developer",
-        "email": "resume@michaelengen.com",
-        "url": "michaelengen.com",
-        "location": {
-            "city": "Columbus",
-            "region": "OH",
-            "countryCode": "US"
-        },
-        "summary": "I am a software developer skilled in full-stack development, technical writing, and scientific programming. Passionate about helping others through technology, I've built end-to-end testing tools, crafted extensive documentation, and worked directly with developers to identify product improvements. I value communication highly and have great experience presenting technical content, including six years of teaching experience, multiple published research papers, and presentations to technical and non-technical audiences.",
+        "name": "Shaun",
+        "label": "新生代农民工",
+        "tel": "",
+        "email": "",
+        "summary": "一个平凡普通的新生代农民工，善于使用和改造工具",
         "profiles": [
             {
-                "network": "in/michael-engen",
-                "url": "https://www.linkedin.com/in/michael-engen/"
+                "network": "Shaun's Space",
+                "url": "https://cniter.github.io"
             }
         ]
     },
     "work": [
         {
-            "name": "PayPal, remote",
+            "name": "某知名退市公司",
             "position": "Integration Engineer III",
             "startDate": "2021",
             "endDate": "Present",
@@ -27,79 +22,99 @@
                 "Designed and developed full-stack application with Flask and Javascript for configuring and testing REST APIs in conjunction with frontend SDKs",
                 "Crafted extensive technical documentation and sample code for new product features to accelerate product adoption",
                 "Gathered product and documentation feedback by collaborating directly with external developers"
-            ]
+            ],
+            "projects": [{
+                "name": "XXX",
+                "tech": "bbb",
+                "highlights": [
+                    "Designed and developed full-stack application with Flask and Javascript for configuring and testing REST APIs in conjunction with frontend SDKs",
+                    "Crafted extensive technical documentation and sample code for new product features to accelerate product adoption",
+                    "Gathered product and documentation feedback by collaborating directly with external developers"
+                ]
+            },{
+                "name": "XXX",
+                "tech": "bbb",
+                "highlights": [
+                    "Designed and developed full-stack application with Flask and Javascript for configuring and testing REST APIs in conjunction with frontend SDKs",
+                    "Crafted extensive technical documentation and sample code for new product features to accelerate product adoption",
+                    "Gathered product and documentation feedback by collaborating directly with external developers"
+                ]
+            }]
         },
         {
-            "name": "Bridgerock Data",
+            "name": "某初创公司",
             "position": "Software Engineer",
             "startDate": "2020",
             "endDate": "2021",
             "highlights": [
-                "Created, managed, and migrated PostgreSQL databases in a data lake architecture",
-                "Identified external stakeholders' business-intelligence needs and produced custom SQL-powered reports for analyzing key performance indicators",
-                "Implemented a new database and computing infrastructure using Docker, shell, and AWS",
-                "Collaborated in an agile development environment and gained experience in a fast-paced startup"
-            ]
+                "Designed and developed full-stack application with Flask and Javascript for configuring and testing REST APIs in conjunction with frontend SDKs",
+                "Crafted extensive technical documentation and sample code for new product features to accelerate product adoption",
+                "Gathered product and documentation feedback by collaborating directly with external developers"
+            ],
+            "projects": [{
+                "name": "XXX",
+                "tech": "aaa",
+                "highlights": [
+                    "Designed and developed full-stack application with Flask and Javascript for configuring and testing REST APIs in conjunction with frontend SDKs",
+                    "Crafted extensive technical documentation and sample code for new product features to accelerate product adoption",
+                    "Gathered product and documentation feedback by collaborating directly with external developers"
+                ]
+            },{
+                "name": "XXX",
+                "tech": "bbb",
+                "highlights": [
+                    "Designed and developed full-stack application with Flask and Javascript for configuring and testing REST APIs in conjunction with frontend SDKs",
+                    "Crafted extensive technical documentation and sample code for new product features to accelerate product adoption",
+                    "Gathered product and documentation feedback by collaborating directly with external developers"
+                ]
+            }]
         },
         {
-            "name": "University of Florida",
-            "position": "Software Developer",
-            "startDate": "2018",
-            "endDate": "2020",
+            "name": "某初创公司",
+            "position": "Software Engineer",
+            "startDate": "2020",
+            "endDate": "2021",
             "highlights": [
-                "Developed an open-source online learning platform for mathematics instructors",
-                "Worked directly with users to collect and implement product feedback"
-            ]
-        },
-        {
-            "name": "Université Paris 13",
-            "position": "Chateaubriand Research Fellow",
-            "startDate": "2019",
-            "endDate": "2019",
-            "period": "Fall&nbsp;2019",
-            "highlights": [
-                "Wrote successful application for a research collaboration with French computer scientists",
-                "Conducted novel mathematical research in a multicultural environment"
-            ]
-        },
-        {
-            "name": "Oak Ridge National Laboratory",
-            "position": "NSF Mathematical Sciences Graduate Intern",
-            "startDate": "May&nbsp;2017",
-            "endDate": "July&nbsp;2017",
-            "period": "Summer&nbsp;2017",
-            "highlights": [
-                "Developed a graph mining algorithm as a method of natural language feature selection for machine learning classification project"
-            ]
+                "Designed and developed full-stack application with Flask and Javascript for configuring and testing REST APIs in conjunction with frontend SDKs",
+                "Crafted extensive technical documentation and sample code for new product features to accelerate product adoption",
+                "OpenDRIVE 3D 编辑器网页版设计全新的架构，包括五大模块：UI，控制，数据，存储，渲染"
+            ],
+            "projects": [{
+                "name": "OpenDRIVE 3D 编辑器网页版",
+                "tech": "three.js, React, Rxjs, IndexedDB, Typescript",
+                "highlights": [
+                    "独立从 0 到 1 开发，包括底层数据架构设计到界面开发，支持模块化 SDK 打包方式",
+                    "完成编辑相关全部功能，包括数据状态持久化，撤销/重做，编辑预览，搜索等，树形结构展示支持上万要素",
+                    "设计实现数据渲染管理模块，支持同屏动态渲染 200 万个以上三角形并流畅编辑"
+                ]
+            },{
+                "name": "OpenDRIVE 3D 编辑器",
+                "tech": "C#, Shader",
+                "highlights": [
+                    "支持 OpenGL 和 D3D 的 Instancing 渲染方式，同屏渲染一万六千辆以上模型车行驶",
+                    "修复 3 维模式下选择道路不准确的问题，新增第三人称相机轨道移动模式",
+                    "优化软件架构，分离 UI 层和逻辑控制层"
+                ]
+            }]
         }
     ],
     "education": [
         {
-            "institution": "University of Florida",
-            "area": "Mathematics",
-            "studyType": "Doctor of Philosophy",
-            "studyTypeShort": "Ph.D.",
-            "startDate": "2017",
-            "endDate": "2021",
-            "dissertation": "*Universal Combinatorial Structures*",
-            "focus": "Discrete Mathematics"
-        },
-        {
-            "institution": "University of Florida",
-            "area": "Mathematics",
-            "studyType": "Master of Science",
+            "institution": "某 985",
+            "area": "CS",
+            "studyType": "硕士",
             "studyTypeShort": "M.S.",
-            "startDate": "2015",
-            "endDate": "2017",
-            "focus": "Discrete Mathematics"
+            "startDate": "2017/9",
+            "endDate": "2019/6",
+            "focus": "图像分割"
         },
         {
-            "institution": "University of Florida",
-            "area": "Mathematics",
-            "studyType": "Bachelor of Science",
+            "institution": "某不知名 211",
+            "area": "GIS",
+            "studyType": "学士",
             "studyTypeShort": "B.S.",
-            "startDate": "2013",
-            "endDate": "2015"
+            "startDate": "2013/9",
+            "endDate": "2017/6"
         }
     ]
 }

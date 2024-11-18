@@ -6,6 +6,13 @@
   </a>
   {%- endfor -%}
 
+  {% comment %} E.g., 110 {% endcomment %}
+  {% if basics.tel -%}
+  <a href="tel:{{ profile.tel }}">
+    {{- profile.tel -}}
+  </a>
+  {%- endif -%}
+
   {% comment %} E.g., personal website {% endcomment %}
   {% if basics.url -%}
   <a href="https://{{ basics.url }}">

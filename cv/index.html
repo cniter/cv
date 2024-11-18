@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <style>@font-face {
+  font-family: "Allura";
+  src: local("Allura"),
+    url("/fonts/Allura-Regular.woff") format("woff"),
+    url("/fonts/Allura-Regular.ttf") format("truetype");
+}
+
+html {
+  font-size: 14pt;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  background: #3f3f3f;
+  color: #999;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+@media print {
+  @page {
+    margin: 0.5in;
+  }
+
+  html {
+    font-size: 10pt;
+  }
+
+  body {
+    margin-block: 0 !important;
+  }
+
+  ul {
+    padding-inline-start: 1.25rem !important;
+
+    li {
+      padding-inline-start: 0.25rem !important;
+    }
+  }
+}
+
+a {
+  color: inherit;
+}
+
+body {
+  max-width: 55rem;
+  margin-inline: auto;
+  margin-block: 0.5rem 2rem;
+
+  &>header {
+    display: flex;
+    padding: 0.5rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &>h1 {
+      font-size: 2rem;
+      font-weight: bolder;
+      font-family: Allura, Helvetica, Tahoma, Arial, "Microsoft YaHei", sans-serif;
+
+      flex: 1 0 auto;
+
+      /* Title, e.g., "Programmer" */
+      &>span {
+        font-size: 1.1rem;
+        font-weight: 300;
+      }
+    }
+
+    &>address {
+      flex: 1 0 auto;
+      align-self: end;
+
+      text-align: end;
+
+      font-style: normal;
+      font-size: 0.9rem;
+      line-height: 1.6;
+
+      &>a {
+        display: block;
+        white-space: pre;
+
+        &::after {
+          margin-inline-start: 0.5rem;
+
+          display: inline-block;
+
+          position: relative;
+          right: 0.5pt;
+        }
+
+        &[href*='cniter.github.io']::after {
+          content: '🌐';
+        }
+
+        &[href^='mailto']::after {
+          content: '📧';
+        }
+
+        &[href^='tel']::after {
+          content: '📞';
+        }
+
+        &[href^='https://www.linkedin.com']::after {
+          content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg viewBox='0 0 72 72' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z' fill='%23007EBB'/%3E%3Cpath d='M62,62 L51.315625,62 L51.315625,43.8021149 C51.315625,38.8127542 49.4197917,36.0245323 45.4707031,36.0245323 C41.1746094,36.0245323 38.9300781,38.9261103 38.9300781,43.8021149 L38.9300781,62 L28.6333333,62 L28.6333333,27.3333333 L38.9300781,27.3333333 L38.9300781,32.0029283 C38.9300781,32.0029283 42.0260417,26.2742151 49.3825521,26.2742151 C56.7356771,26.2742151 62,30.7644705 62,40.051212 L62,62 Z M16.349349,22.7940133 C12.8420573,22.7940133 10,19.9296567 10,16.3970067 C10,12.8643566 12.8420573,10 16.349349,10 C19.8566406,10 22.6970052,12.8643566 22.6970052,16.3970067 C22.6970052,19.9296567 19.8566406,22.7940133 16.349349,22.7940133 Z M11.0325521,62 L21.769401,62 L21.769401,27.3333333 L11.0325521,27.3333333 L11.0325521,62 Z' fill='%23FFF'/%3E%3C/g%3E%3C/svg%3E");
+          background-size: 1rem 1rem;
+
+          width: 1rem;
+          height: 1rem;
+
+          bottom: -2pt;
+          right: 2pt;
+        }
+      }
+    }
+  }
+
+  &>main {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    row-gap: 0.75rem;
+
+    /* h2-level sections, e.g., "Summary", "Experience", or "Education" */
+    &>section {
+      grid-column: 1 / 3;
+
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: subgrid;
+      justify-items: stretch;
+      align-items: start;
+
+      row-gap: 0.75rem;
+      column-gap: 1rem;
+
+      border-block-start: 2pt solid #2f2f2f;
+      padding-block-start: 0.75rem;
+      padding-inline: 0.5rem;
+      margin-inline: 0.25rem;
+
+      line-height: 1.4;
+
+      &>h2 {
+        grid-column: 1 / span 1;
+
+        margin-block-start: 0.16rem;
+
+        line-height: 1;
+
+        font-size: 1.1rem;
+        font-weight: lighter;
+        text-transform: uppercase;
+      }
+
+      &>p,
+      &>section {
+        grid-column: 2 / 3;
+      }
+
+      &>section {
+        display: grid;
+        gap: 0.25rem;
+
+        &>header {
+          display: grid;
+          grid-template-columns: max-content 1fr;
+          column-gap: 0.25rem;
+
+          &>h3 {
+            grid-column: 1 / span 1;
+
+            font-size: 1rem;
+            font-weight: bolder;
+
+            &.normal {
+              font-weight: normal;
+              margin-top: 0.2rem;
+            }
+          }
+
+          &>span {
+            grid-column: 1;
+
+            font-weight: lighter;
+
+            &>.focus {
+              text-transform: lowercase;
+            }
+
+            &.italic {
+              font-style: italic;
+            }
+
+            &.date {
+              grid-column: 2;
+              grid-row: 1;
+
+              justify-self: end;
+              font-weight: normal;
+            }
+          }
+        }
+
+        &>ul {
+          padding-inline-start: 1rem;
+        }
+
+        &>hr {
+          border-top: 1px dashed #2f2f2f;
+          margin-top: 0.2rem;
+
+          &.solid {
+            border-top: 1px solid #686868;
+            padding-bottom: 0.5rem;
+            margin-top: 0rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 50rem) {
+  body {
+    main {
+      &>section {
+
+        &>h2 {
+          grid-column-end: span 2;
+          justify-self: center;
+
+          font-size: 1.25rem;
+        }
+
+        &>p,
+        &>section {
+          grid-column-start: 1;
+
+          &>header {
+            &>h3 {
+              grid-column-end: span 2;
+            }
+
+            &>span.date {
+              grid-row: 2;
+            }
+          }
+        }
+      }
+    }
+  }
+}</style>
+  <title>
+    CV of 
+    Shaun, 
+    新生代农民工
+  </title>
+</head>
+<body>
+  <header>
+  <h1>
+    Shaun
+    <br>
+    <span>新生代农民工</span>
+  </h1>
+  <address>
+  <a href="https://cniter.github.io">Shaun's Space</a>
+  <a href="tel:"></a>
+  
+  <a href="mailto:"></a>
+</address>
+</header>
+  <main>
+    <section>
+  <h2>自我总结</h2>
+  <p>一个平凡普通的新生代农民工，善于使用和改造工具</p>
+</section>
+    <section>
+  <h2>项目经历</h2>
+    <section>
+      
+      <header>
+        <h3>某知名退市公司</h3>
+        <span>Integration Engineer III</span>
+        <span class="date">
+          2021 &ndash;&nbsp;Present
+        </span>
+      </header>
+      <ul>
+          <li>
+            Designed and developed full-stack application with Flask and Javascript for configuring and testing REST APIs in conjunction with frontend SDKs
+          </li>
+          <li>
+            Crafted extensive technical documentation and sample code for new product features to accelerate product adoption
+          </li>
+          <li>
+            Gathered product and documentation feedback by collaborating directly with external developers
+          </li>
+      </ul>
+      <hr />
+        <header>
+          <h3 class="normal">XXX</h3>
+          <span class="italic">bbb</span>
+        </header>
+        <ul>
+            <li>
+              Designed and developed full-stack application with Flask and Javascript for configuring and testing REST APIs in conjunction with frontend SDKs
+            </li>
+            <li>
+              Crafted extensive technical documentation and sample code for new product features to accelerate product adoption
+            </li>
+            <li>
+              Gathered product and documentation feedback by collaborating directly with external developers
+            </li>
+        </ul>
+        <header>
+          <h3 class="normal">XXX</h3>
+          <span class="italic">bbb</span>
+        </header>
+        <ul>
+            <li>
+              Designed and developed full-stack application with Flask and Javascript for configuring and testing REST APIs in conjunction with frontend SDKs
+            </li>
+            <li>
+              Crafted extensive technical documentation and sample code for new product features to accelerate product adoption
+            </li>
+            <li>
+              Gathered product and documentation feedback by collaborating directly with external developers
+            </li>
+        </ul>
+    </section>
+    <section>
+      <hr class="solid" />
+      <header>
+        <h3>某初创公司</h3>
+        <span>Software Engineer</span>
+        <span class="date">
+          2020 &ndash;&nbsp;2021
+        </span>
+      </header>
+      <ul>
+          <li>
+            Designed and developed full-stack application with Flask and Javascript for configuring and testing REST APIs in conjunction with frontend SDKs
+          </li>
+          <li>
+            Crafted extensive technical documentation and sample code for new product features to accelerate product adoption
+          </li>
+          <li>
+            Gathered product and documentation feedback by collaborating directly with external developers
+          </li>
+      </ul>
+      <hr />
+        <header>
+          <h3 class="normal">XXX</h3>
+          <span class="italic">aaa</span>
+        </header>
+        <ul>
+            <li>
+              Designed and developed full-stack application with Flask and Javascript for configuring and testing REST APIs in conjunction with frontend SDKs
+            </li>
+            <li>
+              Crafted extensive technical documentation and sample code for new product features to accelerate product adoption
+            </li>
+            <li>
+              Gathered product and documentation feedback by collaborating directly with external developers
+            </li>
+        </ul>
+        <header>
+          <h3 class="normal">XXX</h3>
+          <span class="italic">bbb</span>
+        </header>
+        <ul>
+            <li>
+              Designed and developed full-stack application with Flask and Javascript for configuring and testing REST APIs in conjunction with frontend SDKs
+            </li>
+            <li>
+              Crafted extensive technical documentation and sample code for new product features to accelerate product adoption
+            </li>
+            <li>
+              Gathered product and documentation feedback by collaborating directly with external developers
+            </li>
+        </ul>
+    </section>
+    <section>
+      <hr class="solid" />
+      <header>
+        <h3>某初创公司</h3>
+        <span>Software Engineer</span>
+        <span class="date">
+          2020 &ndash;&nbsp;2021
+        </span>
+      </header>
+      <ul>
+          <li>
+            Designed and developed full-stack application with Flask and Javascript for configuring and testing REST APIs in conjunction with frontend SDKs
+          </li>
+          <li>
+            Crafted extensive technical documentation and sample code for new product features to accelerate product adoption
+          </li>
+          <li>
+            OpenDRIVE 3D 编辑器网页版设计全新的架构，包括五大模块：UI，控制，数据，存储，渲染
+          </li>
+      </ul>
+      <hr />
+        <header>
+          <h3 class="normal">OpenDRIVE 3D 编辑器网页版</h3>
+          <span class="italic">three.js, React, Rxjs, IndexedDB, Typescript</span>
+        </header>
+        <ul>
+            <li>
+              独立从 0 到 1 开发，包括底层数据架构设计到界面开发，支持模块化 SDK 打包方式
+            </li>
+            <li>
+              完成编辑相关全部功能，包括数据状态持久化，撤销/重做，编辑预览，搜索等，树形结构展示支持上万要素
+            </li>
+            <li>
+              设计实现数据渲染管理模块，支持同屏动态渲染 200 万个以上三角形并流畅编辑
+            </li>
+        </ul>
+        <header>
+          <h3 class="normal">OpenDRIVE 3D 编辑器</h3>
+          <span class="italic">C#, Shader</span>
+        </header>
+        <ul>
+            <li>
+              支持 OpenGL 和 D3D 的 Instancing 渲染方式，同屏渲染一万六千辆以上模型车行驶
+            </li>
+            <li>
+              修复 3 维模式下选择道路不准确的问题，新增第三人称相机轨道移动模式
+            </li>
+            <li>
+              优化软件架构，分离 UI 层和逻辑控制层
+            </li>
+        </ul>
+    </section>
+</section>
+    <section>
+  <h2>教育背景</h2>
+    <section>
+      <header>
+        <h3>
+          某 985
+        </span>
+        </h3>
+        <span>
+          硕士 CS, <span class="focus">
+            研究方向: 图像分割
+          </span>
+        </span>
+        <span class="date">
+          2017/9 &ndash; 2019/6
+        </span>
+      </header>
+    </section>
+    <section>
+      <header>
+        <h3>
+          某不知名 211
+        </span>
+        </h3>
+        <span>
+          学士 GIS
+        </span>
+        <span class="date">
+          2013/9 &ndash; 2017/6
+        </span>
+      </header>
+    </section>
+</section>
+
+  </main>
+</body>
+
+</html>
